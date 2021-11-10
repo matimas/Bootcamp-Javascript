@@ -20,7 +20,7 @@ const bookUtils = {
 		book.year = 2021;
 	},
 	setLanguage(book, language) {
-		book.language = 'English';
+		book.language = language;
 	},
 	setTranslation(book, language, translator) {
 		book.translator = language;
@@ -30,7 +30,7 @@ const bookUtils = {
 	},
 	isSamePublisher(book1, book2) {
 		if (
-			book1.publisher.name === book2.publisher.name &&
+			book1.publisher.name == book2.publisher.name &&
 			book1.publisher.loca === book2.publisher.loca
 		) {
 			return true;
@@ -42,10 +42,13 @@ const bookUtils = {
 console.log(bookUtils.getFirstPublished(book1, book2));
 bookUtils.setNewEdition(book1, book1.year);
 console.log(book1);
+
 bookUtils.setLanguage(book1, book1.year);
-console.log(book1);
+console.log(book1, 'English');
+
 bookUtils.setTranslation(book1, 'spanish', 'translator');
 console.log(book1);
+
 bookUtils.setPublisher(book1, book1.name, 'Tel-aviv');
 bookUtils.setPublisher(book2, book2.name, 'Tel-aviv');
 console.log(book1);
