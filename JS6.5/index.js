@@ -22,6 +22,7 @@ const myObj = {
 if (array1.length) {
 	console.log('im array');
 }
+else{ "im not"}
 //new array with spred ope, not effect
 const array3 = [...array1];
 
