@@ -1,6 +1,6 @@
 //fill an arry with
 const array1 = new Array(100);
-array1.fill(100);
+array1.fill({name:"mati"});
 console.log(array1);
 //creating an arry with Array.from
 console.log(Array.from([10, 20, 30], (x) => x + x));
