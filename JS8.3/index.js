@@ -30,7 +30,7 @@ const bookUtils = {
 	},
 	isSamePublisher(book1, book2) {
 		if (
-			book1.publisher.name == book2.publisher.name &&
+			book1.publisher.name === book2.publisher.name &&
 			book1.publisher.loca === book2.publisher.loca
 		) {
 			return true;
