@@ -1,14 +1,17 @@
-const popV = ['12132', '127653', '128756734', '12345'];
+const listOfNeighbours = [
+	['Canada', 'Mexico'],
+	['Spain'],
+	['Norway', 'Sweden', 'Russia'],
+];
 
-const populationPercentages = (arr) => {
-	let percentages = [];
-
-	let i = 0;
-	while (i < arr.length) {
-		percentages.push(arr[i].length);
-		i++;
+const printCountries = (arr) => {
+	const countries = [];
+	for (let i = 0; i < arr.length; i++) {
+		for (let j = 0; j < arr[i].length; j++) {
+			console.log('Neighbour:' + arr[i][j]);
+			countries.push(arr[i][j]);
+		}
 	}
-	return percentages;
+	return countries;
 };
-
-console.log(populationPercentages(popV));
+printCountries(listOfNeighbours);
