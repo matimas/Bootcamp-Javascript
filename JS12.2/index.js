@@ -17,7 +17,7 @@ const candyStore = {
 };
 
 const getCandy = (candyStore, id) => {
-	const candi = candyStore.candies.filter((candy) => candy.id === id);
+	const candy = candyStore.candies.filter((candy) => candy.id === id);
 	return candy[0];
 };
 const getPrice = (candyStore, id) => {
@@ -31,8 +31,6 @@ const addCandy = (candyStore, id, name, price, amount) => {
 	console.log(candyStore.candies);
 };
 
-
-
 const buy = (candyStore, id) => {
 	candyStore.candies.forEach((candy) => {
 		if (candy.id === id) {
@@ -43,3 +41,6 @@ const buy = (candyStore, id) => {
 	console.log(candyStore);
 };
 console.log(getPrice(candyStore, '5hd7y'));
+console.log(getCandy(candyStore, '5hd7y'));
+addCandy(candyStore, '5klsu8','naknik', 3,10);
+buy(candyStore, '5hd7y');
