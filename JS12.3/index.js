@@ -49,8 +49,9 @@ const school = {
 		}
 		return 'INPUT NOT INVALID';
 	},
+	
 	assignStudent(subject, studentsID) {
-		const stu = this.findPerson('student', id);
+		const stu = this.findPerson('student', studentsID);
 		const availableTeachers = this.teachers.forEach((teacher) => {
 			console.log(stu);
 			if (teacher.subjects.includes(subject)) {
@@ -66,6 +67,7 @@ const school = {
 		});
 		console.log(this.teachers);
 	},
+	
 	assignTeachersSubject(subject, teachersID) {
 		this.teachers.forEach((teacher) => {
 			if (!teacher.subjects.includes(subject) && teacher.id === teachersID) {
@@ -77,7 +79,15 @@ const school = {
 		});
 		console.log(this.teachers);
 	},
+
+	removeStudent(studentID){
+		console.log("Before we remove a student:", this.students);
+		const found = this.students.find((student)=> student.id===studentID);
+		this.students.splice(found,1);
+		console.log("Before we remove a student:", this.students);
+	}
 };
+
 
 console.log(school.findPerson('', 12));
 console.log(school.findPerson('student', 12));
@@ -85,3 +95,4 @@ console.log(school.findPerson('teacher', 2));
 
 school.assignStudent('biology', 10);
 school.assignTeachersSubject('math', 1);
+school.removeStudent(10)
