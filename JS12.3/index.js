@@ -84,7 +84,7 @@ const school = {
 		console.log("Before we remove a student:", this.students);
 		const found = this.students.find((student)=> student.id===studentID);
 		this.students.splice(found,1);
-		console.log("Before we remove a student:", this.students);
+		console.log("After we remove a student:", this.students);
 	}
 };
 
