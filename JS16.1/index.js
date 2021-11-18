@@ -1,7 +1,7 @@
 // function funcA() {
-// 	console.log(a); //undefined because the variable is
-// 	// listed in line 4 and the console's command reads in line 2
-// 	console.log(foo()); // return 2 from foo(), the output will be 2
+// 	console.log(a);                          //print-undefined The variable has not yet been initialized in Global Scope and the Local Scope
+// 	 
+// 	console.log(foo());                             // print 2 - function declaration, are always Hoisted to the top of the current scope, so wean we inoked the function is allready decleread. 
 // 	var a = 1;
 // 	function foo() {
 // 		return 2;
@@ -20,13 +20,13 @@
 // 		},
 // 	},
 // };
-// console.log(obj.prop.getFullName()); //output will be (Aurelio De Rosa),
-// // the scoop is belong to prop obj and the the this key(belong to prop)
-// var test = obj.prop.getFullName;//we can take the Parenthesis from line test()
-//and move it to obj.prop.getFullName() and we achive the fullname
-// console.log(test());//output will be undefined! test is pointer to to function but
-// //the in the global scoop there is no function with the name test so is just a pointer
-// //so canot invoke the function
+// console.log(obj.prop.getFullName());    //output will be (Aurelio De Rosa)-in the localscoop(blookscoop) of getFullName wean we invoke the fun: fullName = 'Aurelio De Rosa'; 
+//                                                                         
+// var test = obj.prop.getFullName;                  
+                                                                             
+// console.log(test());            // output undefined - test cannot invoke the function ,there is no acceses there is no Hoisted is not recognize the plan;                  
+//                                                     
+//                                                                    
 
 /*-------------3---------------- */
 // function funcB() {
@@ -38,9 +38,9 @@
 //  return a;
 // }
 // funcB();
-// console.log(typeof a); //is undefined
-// console.log(typeof b); //output will be 0, is take the b to the global
-// //scoop and asign it with var
+// console.log(typeof a);                                                //is undefined- localscoop(functionscoop) 
+// console.log(typeof b);                                                //output is 0 - the globalscoop declare a var b=0 in the globalscoop
+//                                            
 
 /*------------------4------------------ */
 // function funcC() {
@@ -51,24 +51,25 @@
 // 	console.log('2');
 // }
 // funcC();
-//the hoisting places the fun in line 49
-// at the last, is ignore from the fun in line 46
+                                           //When declared with a function declaration, 
+                                           //are always hoisted to the top of the current scope. in order is tack the last one and print 2 twice
+                                          
 
 /*----------------5--------------------- */
 // function funcD1() {
 // 	d = 1;
 // }
 // funcD1();
-// console.log(d); //d will be in the global as var so is print 1
+// console.log(d); //print 1 - the globalscoop declare a var d=1 d will be in the globalscoop  
 // function funcD2() {
 // 	var e = 1;
 // }
 // funcD2();
-// console.log(e); //output undefined: wrong scoop
+// console.log(e); //output undefined:  localscoop(functionscoop)
 
 /*----------------6---------------------------- */
 function funcE() {
-	console.log('Value of f in local scope: ', f); //1 will be printed because in the local scope f is already set globally
+	console.log('Value of f in local scope: ', f); //1 will be printed because in the globalscope f is already set globally
 }
 console.log('Value of f in global scope: ', f); //output will be undefined -  wrong order replace the place with 74
 var f = 1;
