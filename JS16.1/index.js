@@ -24,7 +24,7 @@
 //                                                                         
 // var test = obj.prop.getFullName;                  
                                                                              
-// console.log(test());            // output undefined - test cannot invoke the function ,there is no acceses there is no Hoisted is not recognize the plan;                  
+// console.log(test());            // output undefined - test cannot invoke the function ,there is no acceses there is no Hoisted(fun belong to localscoop) is not recognize the plan;                  
 //                                                     
 //                                                                    
 
