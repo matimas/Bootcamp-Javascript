@@ -2,7 +2,7 @@ function findSmallest(a, b, c) {
 	if (a > b && b > c) {
 		console.log(dsfsdf);
 		return c;
-	} else if (a < c && c > b) {
+	} else if (a < c && c < b) {
 		return a;
 	} else {
 		return b;
