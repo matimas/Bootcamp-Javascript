@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>form</title>
+		<script type="text/javascript" src="index.js" defer></script>
+	</head>
+	<body>
+		<div class="container">
+			<form class="form" id="form">
+				<div class="form-control">
+					<label>user name</label>
+					<input type="text" placeholder="name" id="name" required />
+				</div>
+				<div class="form-control">
+					<label>user age</label>
+					<input type="number" placeholder="age" id="age" required />
+				</div>
+				<div class="form-control">
+					<label>user mail</label>
+					<input type="text" placeholder="mail" id="mail" required />
+				</div>
+				<input type="submit" value="Submit" class="submit" />
+				<div class="popup-message-container" id="p-m-c">
+					<h2>The received form</h2>
+					<h3 id="user-name"></h3>
+					<h3 id="user-age"></h3>
+					<h3 id="user-mail"></h3>
+					<button id="pop-canceled">Cancel</button>
+					<button id="pop-submit">submit</button>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
