@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				font-size: 20px;
+				font-family: sans-serif;
+				background-color: #333;
+			}
+			.container {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+			}
+			.title {
+				font-size: 20px;
+				width: 430;
+				height: 50px;
+				font-weight: bold;
+				border: rgb(214, 214, 214) solid 2px;
+			}
+			.post {
+				display: inline-table;
+				height: 150px;
+				width: 400px;
+				margin: 20px;
+				background-color: aquamarine;
+				border: 2px solid rgb(0, 183, 255);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<button id="getpost">getpost</button>
+			<div id="post"></div>
+		</div>
+		<script>
+			async function getpost() {
+				try {
+					const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+					data = await res.json();
+					let output = '';
+					data.forEach((element) => {
+						output += `
+							<div class="post">
+						  	<h1 class="title">
+                  ${element.title}
+                </h1>  
+                  ${element.body}
+              </div>
+							`;
+						document.getElementById('post').innerHTML = output;
+					});
+				} catch (error) {
+					console.log(error);
+				}
+			}
+			document.getElementById('getpost').addEventListener('click', getpost);
+		</script>
+	</body>
+</html>
